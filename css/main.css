@@ -80,7 +80,7 @@ body {
 
 
 .showcase {
-    background-image: linear-gradient(to right, #3b33b4, #91afe7);
+    background-image: linear-gradient(to right, #000046, #1cb5e0);
     height: 90vh;
     max-height: max-content;
     color: var(--lightColor);
@@ -92,20 +92,25 @@ body {
 
 .showcase .showcase-content {
     margin-top: 1rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .showcase .showcase-content h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     padding: 20px 0;
-    animation: fadeIn .5s ease-in-out .5s;
+    animation: fadeIn .5s ease-in-out both;
 }
 .showcase .showcase-content h1 span{
-    color: #091555;
-   font-style: italic;
+    font-style: italic;
 }
 
 .showcase .showcase-content p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     animation: fadeIn .5s ease-in-out both;
     animation-delay: .3s;
 }
@@ -113,57 +118,40 @@ body {
 .showcase .showcase-content a {
     text-decoration: none;
     color: var(--brandColor);
-    margin: 2rem 0;
+    margin: 3rem 0;
     display: inline-block;
     background-color: var(--midColor);
     padding: 15px;
     border-radius: 5px;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 600;
     animation: fadeIn .5s ease-in-out both;
     animation-delay: .3s;
+    transition: .3s ease-in-out;
+}
+.showcase .showcase-content a i{
+    font-size: 1.7rem;
+    margin-left: 5px;
     transition: .5s ease-in-out;
 }
-
-.showcase .showcase-content a:hover {
-    padding: 13px;
+.showcase .showcase-content a:hover i{
+    margin-left: 10px;
 }
 
-.showcase img {
-    width: 400px;
-    margin: 2rem .6rem;
-    align-self: center;
-    justify-self: center;
-    animation: fadeOut .5s ease-in-out;
-    animation-delay: .3s;
-    filter: drop-shadow(5px 5px 20px rgba(0, 0, 0, 0.5));
-    transform: rotateZ(10deg);
-}
 
 /* Animations */
 @keyframes fadeIn {
     0% {
-        transform: translateX(-150%);
         opacity: 0;
+        transform: scale(0);
     }
 
     100% {
-        transform: translateX(0%);
         opacity: 1;
+        transform: scale(1);
     }
 }
 
-@keyframes fadeOut {
-    0% {
-        transform: translateX(150%);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0%);
-        opacity: 1;
-    }
-}
 
 .cube {
     font-size: 7rem;
@@ -194,7 +182,7 @@ body {
 }
 
 .counters div i {
-    font-size: 4rem;
+    font-size: 2.5rem;
     color: var(--brandColor);
     text-align: center;
     margin: auto;
@@ -202,36 +190,53 @@ body {
 }
 
 .counters div .counter {
-    font-size: 4rem;
+    font-size: 2rem;
 }
 
 .counters div h3 {
     text-transform: uppercase;
 }
 
+.shopercase-img{
+    max-width: 760px;
+    margin: 40px auto;
+}
+.shopercase-img img{
+    width: 100%;
+}
+
 .wrapper-home{
-    background-color: #d1dffa;
+    /* background-color: #d1dffa; */
+    background-color: rgba(28, 181, 224, 0.3);
     padding: 20px;
 }
-.wrapper {
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.wrapper > div {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
     padding: 20px;
     max-width: 960px;
-    margin: auto;
+    margin: 20px  auto;
 }
 
 .wrapper img {
     width: 100%;
-    max-width: 300px;
+    max-width: 500px;
     justify-self: center;
     align-self: center;
+    filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.3));
 }
 
 .wrapper .welcome {
     align-self: center;
-    background-color: var(--lightColor);
+    /* background-color: var(--lightColor); */
+    background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
     padding: 30px;
     border-radius: 5px;
@@ -248,23 +253,41 @@ body {
     line-height: 1.5;
 }
 
-
-.wordmark {
-    margin: 3rem auto;
+.banner{
     max-width: 960px;
+    height: 350px;
+    margin: 10px auto;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 30px;
+   align-items: center;
+   justify-content: space-between;
+   color: var(--lightColor);
 }
-
-.mark {
-    width: 70px;
-    margin: -20px auto;
-    color: #333;
+.banner .banner-inner{
+    background-image: linear-gradient(to right,  rgba(0, 0, 70, 0.8), rgba(28, 181, 224, 0.8));
+   padding: 20px;
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.8;
+}
+.banner img{
+    width: 300px;
+    margin: 40px;
+}
+.banner .banner-inner h2{
+    font-size: 2rem;
 }
 
 .features {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px
-  ;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     padding: 20px;
     max-width: 960px;
     margin: auto;
@@ -273,9 +296,10 @@ body {
 .features .card {
     background-color: var(--lightColor);
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
-    padding: 10px;
+    padding: 20px;
     margin: 10px;
     width: 100%;
+    height: fit-content;
     max-width: 300px;
     border-radius: 5px;
 }
@@ -283,16 +307,23 @@ body {
     width: 100%;
     max-width: 300px;
     margin: 10px auto;
-    border-radius: 10px;
+    border-radius: 5px;
+    filter: grayscale(100%);
+    transition: .5s ease-in-out;
+}
+.features .card img:hover{
+    filter: grayscale(0%);
+}
+.features .card div{
+    padding: 0;
 }
 .features .card p{
     width: 100%;
-    padding: 5px;
 }
 .features .card i {
     color: var(--brandColor);
-    padding: 5px 10px;
     font-size: 1.5rem;
+    padding: 5px;
 }
 
 .hero {
@@ -351,22 +382,29 @@ body {
 }
 
 .pricing .pricing-table .tab {
-    border: 2px solid var(--brandColor);
     text-align: center;
     height: fit-content;
+    border-radius: 5px;
+    background-image: linear-gradient(to right,  rgba(0, 0, 70, 0.3), rgba(28, 181, 224, 0.3));
+    padding: 30px;
+    cursor: pointer;
 }
 
 .pricing .pricing-table .tab .head {
-    background-color: var(--brandColor);
     width: 100%;
-    color: var(--lightColor);
+    color: #333;
     padding: 10px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    margin: 15px 0;
 }
 
 .pricing .pricing-table .tab .bord {
     border-bottom: 2px solid var(--brandColor);
-    padding: 5px;
+    padding: 10px;
+    transition: .3s ease-in-out;
+}
+.pricing .pricing-table .tab .bord:hover{
+    color: #1c3379;
 }
 
 .pricing .pricing-table .tab .subscribe {
@@ -377,14 +415,16 @@ body {
     display: inline-block;
     padding: 10px;
     font-weight: 500;
+    border-radius: 3px;
+    margin: 5px 0;
 }
 
 .testimonial {
-    max-width: 600px;
+    max-width: 500px;
     margin: 10px auto;
     padding: 20px;
     height: 450px;
-    background-color: var(--brandColor);
+    background-color: rgba(28, 51, 121, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -408,12 +448,12 @@ body {
     position: absolute;
     left: 0;
     top: 40%;
-    font-size: 5rem;
+    font-size: 4em;
     color: var(--brandColor);
     font-weight: 600;
     cursor: pointer;
     margin-left: -1em;
-    animation: bounce 5s ease-in-out infinite;
+    animation: bounce 1s ease-in-out infinite;
     transition: all 1s ease-in-out;
 }
 .testimonial #next{
@@ -423,7 +463,7 @@ body {
     position: absolute;
     right: 0;
     top: 40%;
-    font-size: 5rem;
+    font-size: 4rem;
     color: var(--brandColor);
     font-weight: 600;
     cursor: pointer;

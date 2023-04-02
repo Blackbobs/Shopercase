@@ -61,7 +61,7 @@ const testimonials = [
         content: "As a small business owner, finding the right tools to run my online store can be overwhelming, butShopercase has made my life easier! I love the Customizable options and the ability to integrate with other platforms. The app has helped me streamline my processes and grow my business. Thank you.",
     }
 ];
-
+// Testimonail functionalities
 // Current slide
 let i = 0;
 // Total slide
