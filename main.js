@@ -1,39 +1,39 @@
-const sideMenu = document.querySelector('.side-menu');
-const hamBurger = document.querySelector('.fa-bars');
-const counters = document.querySelectorAll('.counter');
-const speed = 100;
+// const sideMenu = document.querySelector('.side-menu');
+// const hamBurger = document.querySelector('.fa-bars');
+// const counters = document.querySelectorAll('.counter');
+// const speed = 100;
 
-hamBurger.addEventListener('click', () => {
-    const shown = sideMenu.classList.contains('show');
-    sideMenu.classList.toggle('show');
-    if (shown) {
-        hamBurger.classList.add('fa-bars');
-        hamBurger.classList.remove('fa-times');
-        document.body.classList.toggle('stop-scrolling');
-    } else {
-        hamBurger.classList.remove('fa-bars');
-        hamBurger.classList.add('fa-times');
-        document.body.classList.toggle('stop-scrolling');
-    }
-})
+// hamBurger.addEventListener('click', () => {
+//     const shown = sideMenu.classList.contains('show');
+//     sideMenu.classList.toggle('show');
+//     if (shown) {
+//         hamBurger.classList.add('fa-bars');
+//         hamBurger.classList.remove('fa-times');
+//         document.body.classList.toggle('stop-scrolling');
+//     } else {
+//         hamBurger.classList.remove('fa-bars');
+//         hamBurger.classList.add('fa-times');
+//         document.body.classList.toggle('stop-scrolling');
+//     }
+// })
 
-counters.forEach(counter => {
-    const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
+// counters.forEach(counter => {
+//     const updateCount = () => {
+//         const target = +counter.getAttribute('data-target');
+//         const count = +counter.innerText;
 
-        const inc = target / speed;
+//         const inc = target / speed;
 
-        if (count < target) {
-            counter.innerText = Math.ceil(count + inc);
-            setTimeout(updateCount, 100)
-        } else {
-            count.innerText = target
-        }
-    }
+//         if (count < target) {
+//             counter.innerText = Math.ceil(count + inc);
+//             setTimeout(updateCount, 100)
+//         } else {
+//             count.innerText = target
+//         }
+//     }
 
-    updateCount()
-})
+//     updateCount()
+// })
 
 const testimonials = [
     {
@@ -91,4 +91,48 @@ let displayTestimonial = () => {
     </div>
     `;
 }
-window.onload = displayTestimonial;
+displayTestimonial();
+
+let z = 0;
+let backgroundDisplay = [];
+let time = 15000;
+
+
+
+ backgroundDisplay = [
+    {
+        bgImg: "url(../images/showcase1.jpg)"
+    },
+    {
+        bgImg: "url(../images/showcase2.jpg)"
+    },
+    {
+        bgImg: "url(../images/showcase3.jpg)"
+    },
+    {
+        bgImg: "url(../images/showcase4.jpg)"
+    },
+    {
+        bgImg: "url(../images/showcase5.jpg)"
+    },
+    {
+        bgImg: "url(../images/showcase6.jpg)"
+    }
+];
+
+
+const changeImg = () => {
+    const showcase = document.querySelector('.showcase');
+
+    showcase.style.backgroundImage = `${backgroundDisplay[z].bgImg}`;
+    
+    if(z < backgroundDisplay.length - 1){
+        z++;
+    }else{
+        z = 0;
+    }
+
+    setTimeout(changeImg, time);
+}
+
+window.onload = changeImg;
