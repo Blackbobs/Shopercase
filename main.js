@@ -40,7 +40,7 @@ const testimonials = [
         name: "Treasure",
         job: "CEO, Shopercase",
         id: "1",
-        content: "As a busy enterpreneur, I don't have a lot of time to spend managing my online store. That's why Ilove shopercase! It's fast, efficient, and saves me so much time. I can easily manage my products, orders, and customers information all in one place. Highly recommended!",
+        content: "As a busy enterpreneur, I don't have a lot of time to spend managing my online store. That's why I love shopercase! It's fast, efficient, and saves me so much time. I can easily manage my products, orders, and customers information all in one place. Highly recommended!",
     },
     {
         name: "Sarak K.",
