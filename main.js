@@ -1,39 +1,25 @@
-// const sideMenu = document.querySelector('.side-menu');
-// const hamBurger = document.querySelector('.fa-bars');
-// const counters = document.querySelectorAll('.counter');
-// const speed = 100;
+const sideMenu = document.querySelector('.main-nav');
+const hamBurger = document.querySelector('.fa-bars-staggered');
+const closeBtn = document.querySelector('.fa-times');
+const deckBtn = document.querySelector('.deck');
+const accordion = document.querySelector('.accordion');
 
-// hamBurger.addEventListener('click', () => {
-//     const shown = sideMenu.classList.contains('show');
-//     sideMenu.classList.toggle('show');
-//     if (shown) {
-//         hamBurger.classList.add('fa-bars');
-//         hamBurger.classList.remove('fa-times');
-//         document.body.classList.toggle('stop-scrolling');
-//     } else {
-//         hamBurger.classList.remove('fa-bars');
-//         hamBurger.classList.add('fa-times');
-//         document.body.classList.toggle('stop-scrolling');
-//     }
-// })
 
-// counters.forEach(counter => {
-//     const updateCount = () => {
-//         const target = +counter.getAttribute('data-target');
-//         const count = +counter.innerText;
+// Hamburger menu
+hamBurger.addEventListener('click', () => {
+    sideMenu.classList.add('show');
+    document.body.classList.add('stop-scrolling');
+});
+closeBtn.addEventListener('click', () => {
+    sideMenu.classList.remove('show');
+    document.body.classList.remove('stop-scrolling');
+});
 
-//         const inc = target / speed;
-
-//         if (count < target) {
-//             counter.innerText = Math.ceil(count + inc);
-//             setTimeout(updateCount, 100)
-//         } else {
-//             count.innerText = target
-//         }
-//     }
-
-//     updateCount()
-// })
+// Menu categories
+deckBtn.addEventListener('click', () => {
+    accordion.classList.toggle('dropdown');
+    document.querySelector('.fa-chevron-down').classList.toggle('fa-chevron-up');
+});
 
 const testimonials = [
     {
